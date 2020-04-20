@@ -1,0 +1,10 @@
+POST http://localhost:8080/feedback
+Content-Type: application/json
+
+{
+  "name": "Muhammad Abid Hasan Miyad",
+  "email": "saimon.inflack@bkash.com",
+  "feedback": "Hello Man!\nYour content is superb!\nTake Love!"
+}
+
+###
