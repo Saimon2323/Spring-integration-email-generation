@@ -1,6 +1,8 @@
 package com.saimon.spring.email.service.impl;
 
 import com.saimon.spring.email.service.EmailService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -9,14 +11,15 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+import java.util.Arrays;
 
 @Service
 public class EmailServiceImpl implements EmailService {
 
+    Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
+
     @Autowired
     private JavaMailSender mailSender;
-
-
 
     @Override
     public void sendEmail(String emailFrom, String[] emailTo, String replyTo, String[] emailCc,
@@ -61,7 +64,7 @@ public class EmailServiceImpl implements EmailService {
         //send Email
         mailSender.send(mailMessage);
 
-        System.out.println("Email sent Successfully!");
+        logger.info("Email sent successfully to "+ Arrays.toString(emailTo));
 
     }
 
