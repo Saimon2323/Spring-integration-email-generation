@@ -3,7 +3,8 @@ package com.saimon.spring.email.entity;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-@Entity(name = "Email_config")
+@Entity
+@Table(name = "email_config")
 public class EmailConfigEntity {
 
     @Id
@@ -33,11 +34,6 @@ public class EmailConfigEntity {
     @Lob
     @Column(name = "email_body", nullable = false)
     private String emailBody;
-
-    @Size(max = 500)
-    @Column(name = "email_footer", nullable = false)
-    private String emailFooter;
-
 
     public Long getId() {
         return id;
@@ -93,14 +89,6 @@ public class EmailConfigEntity {
 
     public void setEmailBody(String emailBody) {
         this.emailBody = emailBody;
-    }
-
-    public String getEmailFooter() {
-        return emailFooter;
-    }
-
-    public void setEmailFooter(String emailFooter) {
-        this.emailFooter = emailFooter;
     }
 
 }
