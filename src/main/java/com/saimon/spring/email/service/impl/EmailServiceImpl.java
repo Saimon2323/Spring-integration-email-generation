@@ -108,8 +108,15 @@ public class EmailServiceImpl implements EmailService {
             helper.setText(Strings.EMPTY);
         } else {
             helper.setText(emailDto.getEmailBody(), true);
-//          helper.setText("<html><body>" + emailDto.getEmailBody() + "</body></html>", true); jodi HTML a organize na thake
+//          helper.setText("<html><body>" + emailDto.getEmailBody() + "</body></html>", true); another way, jodi HTML a organize na thake.
+//          this portion is taken from a code snippet where coding structure was like below example.
         }
+
+//        if (isHtmlMail) { //pass this as parameter (boolean)
+//            helper.setText("<html><body>" + message + "</body></html>", true);
+//        } else {
+//            helper.setText(message);
+//        }
 
         helper.setSentDate(new Date());
 
