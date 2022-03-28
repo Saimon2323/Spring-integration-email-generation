@@ -24,8 +24,8 @@
 //
 //    @Value("${spring.mail.port}")
 //    private int port;
-//    // line 46 dile mane ssl on korle tokhon port 465 dite hobe
-//    // or port 465 dile, line 46 mane ssl er line ta dite hobe
+//    // javaMailProperties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory") dile mane ssl on korle tokhon port 465 dite hobe
+//    // or port 465 dile, uporer ta mane ssl er line ta dite hobe
 //
 //    @Value("${spring.mail.username}")
 //    private String username;
@@ -42,9 +42,9 @@
 //        javaMailSender.setUsername(username);
 //        javaMailSender.setPassword(password);
 //
-//        //Properties javaMailProperties = new Properties(); //evabe dile 48 line o dite hobe
-//        Properties javaMailProperties = javaMailSender.getJavaMailProperties(); //evabe dile 48 line dewar dorkar nai
-//        javaMailProperties.put("mail.smtp.starttls.enable", "true");
+//        //Properties javaMailProperties = new Properties(); //evabe dile 'javaMailSender.setJavaMailProperties(javaMailProperties);' line o dite hobe
+//        Properties javaMailProperties = javaMailSender.getJavaMailProperties(); //evabe dile 'javaMailSender.setJavaMailProperties(javaMailProperties);' line dewar dorkar nai
+//        javaMailProperties.put("mail.smtp.starttls.enable", "true"); // required if port is 587
 //        javaMailProperties.put("mail.smtp.auth", "true");
 //        javaMailProperties.put("mail.transport.protocol", "smtp");
 //        //javaMailProperties.put("mail.debug", "true"); // Indicates that the DEBUG mode is turned on, so that the log of the email sending process will be printed on the console to facilitate troubleshooting
