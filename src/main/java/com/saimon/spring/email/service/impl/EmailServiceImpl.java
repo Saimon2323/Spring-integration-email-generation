@@ -108,6 +108,7 @@ public class EmailServiceImpl implements EmailService {
             helper.setText(Strings.EMPTY);
         } else {
             helper.setText(emailDto.getEmailBody(), true);
+//          helper.setText("<html><body>" + emailDto.getEmailBody() + "</body></html>", true); jodi HTML a organize na thake
         }
 
         helper.setSentDate(new Date());
